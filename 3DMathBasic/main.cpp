@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include "Vector_3D.h"
+#include "Matrix3x3.h"
+#include "MathUtil.h"
 
 using namespace std;
 
@@ -15,39 +17,20 @@ using namespace std;
 void print_v(string name,Vector_3D &vector) {
 	cout << name<<":"<<"[" << vector.getX() << "," << vector.getY()<< "," << vector.getZ()<< "]" << endl;
 }
+
+void print_m(string name,Matrix3x3 &matrix) {
+	cout << name << ":" << endl;
+	cout << matrix.m11 << "\t" << matrix.m12 << "\t" << matrix.m13 << endl;
+	cout << matrix.m21 << "\t" << matrix.m22 << "\t" << matrix.m23 << endl;
+	cout << matrix.m31 << "\t" << matrix.m32 << "\t" << matrix.m33 << endl;
+}
 int main() {
 	cout << "Everything is OK!!!" << endl;
-	Vector_3D v1(21,34,12);
-	print_v("v1",v1);
-	Vector_3D v2(v1);
+	Matrix3x3 m1;
+	Vector_3D v1(10.0,0.0,0.0),v2;
+	m1.setRotateMatrix(2,PI);
+	v2 = v1 * m1;
 	print_v("v2",v2);
-	v2.zero();
-	print_v("After zero() v2",v2);
-	double magic = v1.vectorMag();
-	cout << "v1 magic :"<<magic << endl;
-	Vector_3D v3 = -v1;
-	print_v("v3(-v1)",v3);
-	Vector_3D v4(2, 4, 6);
-	Vector_3D v5 = 2 * v4;
-	print_v("2*v4(2,4,6)",v5);
-	v5 = v4 * 2;
-	print_v("v4(2,4,6)*2",v5);
-	Vector_3D v6 = v4 / 2;
-	print_v("v4/2",v6);
-
-	v5 *= 2;
-	v6 /= 2;
-	print_v("v5*=2",v5);
-	print_v("v6/=2",v6);
-	Vector_3D v7(1.8,2.2,3.7);
-	Vector_3D v8(2.2,5.8,9.3);
-	Vector_3D v9 = v7 - v8;
-	Vector_3D v10 = v7 + v8;
-	print_v("v7-v8",v9);
-	print_v("v7+v8",v10);
-	Vector_3D v11(3,4,5);
-	v11.normalize();
-	print_v("v11(3,4,5) normalize()",v11);
 	system("pause");
 	return 0;
 };

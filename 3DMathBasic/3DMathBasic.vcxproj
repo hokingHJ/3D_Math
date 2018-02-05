@@ -116,8 +116,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Matrix3x3.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MathUtil.h" />
+    <ClInclude Include="Matrix3x3.h" />
     <ClInclude Include="Vector_3D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
