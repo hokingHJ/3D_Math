@@ -27,10 +27,20 @@ void print_m(string name,Matrix3x3 &matrix) {
 int main() {
 	cout << "Everything is OK!!!" << endl;
 	Matrix3x3 m1;
-	Vector_3D v1(10.0,0.0,0.0),v2;
-	m1.setRotateMatrix(2,PI);
-	v2 = v1 * m1;
-	print_v("v2",v2);
+	Vector_3D v1(0,0,1.0);
+	Vector_3D sv(1.0,1.0,1.0);
+	Vector_3D v2(3.0,2.0,8.0);
+	Vector_3D recv;
+	print_v("before",v2);
+	m1.setReflect(1);
+	recv = v2 * m1;
+	print_v("setReflect in X direction",recv);
+	m1.setReflect(v1);
+	recv = v2 * m1;
+	print_v("setReflect in a special direction",recv);
+	m1.setReflect(sv);
+	recv = v2 * m1;
+	print_v("setReflect in a sv direction", recv);
 	system("pause");
 	return 0;
 };

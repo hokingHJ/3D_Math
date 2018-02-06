@@ -87,6 +87,7 @@ public:
 	}
 
 	//Normalize the vector and then the vector's magic will always be one;
+	//And this manipulation will change the object's variables,so no const;
 	bool normalize() {
 		double magic = this->vectorMag();
 		if (magic != 0) {
@@ -132,7 +133,7 @@ public:
 	//This method should be describe by "const",althouth,
 	//it just return a value rather than a reference.
 	//It is not necessary to worry about modification.
-	double getX() const {
+	double getX() const{
 		return this->x;
 	}
 	double getY()  const{

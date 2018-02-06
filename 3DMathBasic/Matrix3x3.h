@@ -10,6 +10,11 @@ public:
 	double m21, m22, m23;
 	double m31, m32, m33;
 	void setRotateMatrix(int axis,double theta);
+	void setScaleMatrix(const Vector_3D &vector);
+	bool setPorjectMatrix(Vector_3D &vector);
+	void setReflect(int axis);
+	bool setReflect(Vector_3D & vector);
+	void setShear(int axis,double fcoef,double scoef);
 };
 
 //Below,there are two function.Both of them return a value rather a reference 
