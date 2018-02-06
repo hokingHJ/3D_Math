@@ -1,3 +1,6 @@
+/*
+This is a vector class.
+*/
 #ifndef __VECTOR_3D_H_INCLUDE__
 #define __VECTOR_3D_H_INCLUDE__
 
